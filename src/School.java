@@ -1,3 +1,6 @@
+import java.util.List;
+import java.util.stream.Stream;
+
 /* Created by 3935415 Abdullah Adam on 2020/09/19
  * www.github.com/anneKsiy
  * School class which allows School Objects to be created
@@ -61,5 +64,9 @@ public class School {
         String lng = metadata[2];
         String rating = metadata[3];
         return new School(name, lat, lng, rating);
+    }
+
+    public void sortSchools(List<School> schools) {
+
     }
 }
