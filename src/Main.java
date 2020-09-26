@@ -56,7 +56,7 @@ public class Main {
         ArrayList<Integer> travPath = schoolGraph.depthFirstSearch(0);
         System.out.println();
         for (int i = 0; i < travPath.size(); i++) {
-            System.out.print(travPath.get(i) + " ");
+            System.out.println(newSchoolArr.get(travPath.get(i)));
         }
     }
 }
