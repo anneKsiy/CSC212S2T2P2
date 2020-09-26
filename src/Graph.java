@@ -25,15 +25,17 @@ public class Graph {
     }
 
     // Print Breadth First Search traversal from a given source s
-    void breadthFirstSearch(int s) {
+    ArrayList<Integer> breadthFirstSearch(int s) {
         boolean visited[] = new boolean[V]; // a boolean array which will be used to mark vertices visited or not visited (false as default)
+        ArrayList<Integer> traversalPath = new ArrayList<>();
         LinkedList<Integer> queue = new LinkedList<>(); // create a queue for BFS
         visited[s] = true; // mark the current node as visited and enqueue it
         queue.add(s);
 
         while (queue.size() != 0) {
             s = queue.poll(); // dequeue a vertex from the queue and print it
-            System.out.println(s + " ");
+            System.out.print(s + " ");
+            traversalPath.add(s);
 
             // Get all the adjacent vertices of the dequeued vertex s
             // If an adjacent vertex has not been visited, then mark it as visited
@@ -47,6 +49,7 @@ public class Graph {
                 }
             }
         }
+        return traversalPath;
     }
 
     ArrayList<Integer> depthFirstSearch(int v) {

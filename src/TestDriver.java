@@ -40,10 +40,10 @@ public class TestDriver {
             }
         }
 //        for (int i = 0; i < indexArr.size(); i++) {
-//            System.out.println(indexArr.get(i));
+//            System.out.println("indexArr: " + indexArr.get(i));
 //        }
 
-        Graph schoolGraph = new Graph(count);
+        Graph schoolGraph = new Graph(newSchoolArr.size());
         schoolGraph.addEdge(indexArr.get(0), 1);
         schoolGraph.addEdge(0, 2);
         schoolGraph.addEdge(1, 2);
@@ -78,10 +78,10 @@ public class TestDriver {
             System.out.println("Node: " + i + ", has edges with: " + schoolGraph.adj[i]);
         }
 
-        schoolGraph.breadthFirstSearch(0);
-//        ArrayList<Integer> travPath = schoolGraph.depthFirstSearch(0);
+//        schoolGraph.breadthFirstSearch(0);
+//        ArrayList<Integer> travPath = schoolGraph.breadthFirstSearch(0);
 //        for (int i = 0; i < travPath.size(); i++) {
-//            System.out.println(travPath.indexOf(i));
+//            System.out.println("Test: " + i + "" + travPath.get(i));
 //        }
     }
 }
