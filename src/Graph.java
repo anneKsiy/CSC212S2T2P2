@@ -1,5 +1,7 @@
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 
 /* Created by 3935415 Abdullah Adam on 2020/09/19
  * www.github.com/anneKsiy
@@ -7,7 +9,7 @@ import java.util.LinkedList;
  */
 public class Graph {
     private int V; // Vertices
-    private LinkedList<Integer> adj[]; // Adjacency Lists
+    public LinkedList<Integer> adj[]; // Adjacency Lists
 
     // Constructor
     Graph(int v) {
@@ -47,21 +49,24 @@ public class Graph {
         }
     }
 
-    void depthFirstSearch(int v) {
+    ArrayList<Integer> depthFirstSearch(int v) {
         boolean visited[] = new boolean[V]; // a boolean array which will be used to mark vertices visited or not visited (false as default)
-        depthFirstSearchUtil(v, visited); // calling the recursive helper method to print the DFS traversal
+        ArrayList<Integer> traversalPath = new ArrayList<>();
+        depthFirstSearchUtil(v, visited, traversalPath); // calling the recursive helper method to print the DFS traversal
+        return traversalPath;
     }
 
     // helper method for depthFirstSearch(int v)
-    void depthFirstSearchUtil(int v, boolean visited[]) {
+    void depthFirstSearchUtil(int v, boolean visited[], ArrayList<Integer> traversalPath) {
         visited[v] = true; // mark the current node as visited and print it
-        System.out.println(v + " ");
+        System.out.print(v + " ");
+        traversalPath.add(v);
         // recur over all the vertices adjacent to the current vertex
         Iterator<Integer> i = adj[v].listIterator();
         while (i.hasNext()) {
             int n = i.next();
             if (!visited[n])
-                depthFirstSearchUtil(n, visited);
+                depthFirstSearchUtil(n, visited, traversalPath);
         }
     }
 }

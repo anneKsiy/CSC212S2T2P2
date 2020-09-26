@@ -66,7 +66,4 @@ public class School {
         return new School(name, lat, lng, rating);
     }
 
-    public void sortSchools(List<School> schools) {
-
-    }
 }
