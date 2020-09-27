@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-/* Created by 3935415 Abdullah Adam on 2020/09/19
+/* Created by 3935415 Abdullah Adam on 2020/09/25
  * www.github.com/anneKsiy
  * SortingUtilities class containing the methods:
  * mergeSortSchool(List<School> arr) -> void

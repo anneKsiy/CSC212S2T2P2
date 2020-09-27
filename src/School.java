@@ -1,13 +1,13 @@
-import java.util.List;
-import java.util.stream.Stream;
-
-/* Created by 3935415 Abdullah Adam on 2020/09/19
+/* Created by 3935415 Abdullah Adam on 2020/09/25
  * www.github.com/anneKsiy
  * School class which allows School Objects to be created
  * School(name, lat lng, rating) * All Strings *
  * Method createSchool(metadata) which accepts a String[] Array created in "CSVParser.java" at line 19
  * All accessors and mutators (setters and getters) are present, in case they need to be used in future iterations of the code
  */
+import java.util.List;
+import java.util.stream.Stream;
+
 public class School {
     private String name;
     private String lat;

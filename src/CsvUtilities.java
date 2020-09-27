@@ -1,6 +1,6 @@
-/* Created by 3935415 Abdullah Adam on 2020/09/19
+/* Created by 3935415 Abdullah Adam on 2020/09/25
  * www.github.com/anneKsiy
- * Class which parses the CSV File into a 2-dimensional array
+ * Class which parses the CSV File into an array of School objects
  */
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -27,12 +27,11 @@ public class CsvUtilities {
         }
         return schools;
     }
-
-    public static void generateCSV(String fileName, List<School> schools, long durationMS, long durationQS) throws IOException {
+    public static void generateCSV(String fileName, List<School> schools, ArrayList<Integer> DFSTravPath,
+                                   ArrayList<Integer> BFSTravPath) throws IOException {
         FileWriter fw = new FileWriter(fileName);
         PrintWriter out = new PrintWriter(fw);
-        out.print("time in milliseconds: " + durationMS + "\n");
-        out.print("Result [");
+        out.print("Values [");
         for (School s : schools) {
             if (schools.indexOf(s) != 0 && schools.indexOf(s) != schools.size() - 1) {
                 out.print(" " + s.getName() + ",");
@@ -45,8 +44,7 @@ public class CsvUtilities {
             }
         }
         out.print("]\n\n");
-        out.print("time in milliseconds: " + durationQS + "\n");
-        out.print("Result [");
+        out.print("Sorted [");
         for (School s : schools) {
             if (schools.indexOf(s) != 0 && schools.indexOf(s) != schools.size() - 1) {
                 out.print(" " + s.getName() + ",");
@@ -59,6 +57,14 @@ public class CsvUtilities {
             }
         }
         out.print("]");
+        out.print("\n\nFollowing is Depth First Traversal\n");
+        for (int i = 0; i < DFSTravPath.size(); i++) {
+            out.print(DFSTravPath.get(i) + " ");
+        }
+        out.print("\n\nFollowing is Breadth First Traversal\n");
+        for (int i = 0; i < BFSTravPath.size(); i++) {
+            out.print(BFSTravPath.get(i) + " ");
+        }
         out.flush();
         out.close();
         fw.close();

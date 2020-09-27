@@ -1,7 +1,14 @@
+/* Created by 3935415 Abdullah Adam on 2020/09/25
+ * www.github.com/anneKsiy
+ * Class which contains the Graph structure as well as the following methods:
+ * void addEdge(int v, int w)
+ * ArrayList<Integer> breadthFirstSearch(int s)
+ * ArrayList<Integer> depthFirstSearch(int v)
+ * void depthFirstSearchUtil(int v, boolean visited[], ArrayList<Integer> traversalPath)
+ */
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.List;
 
 /* Created by 3935415 Abdullah Adam on 2020/09/19
  * www.github.com/anneKsiy
